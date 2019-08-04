@@ -55,6 +55,7 @@ h1, h2, h3, h4, h5,
   opacity: 0;
   visibility: hidden; }
 
+
 .offcanvas-menu .site-wrap {
   height: 100%;
   width: 100%;
@@ -73,7 +74,7 @@ h1, h2, h3, h4, h5,
   padding: 2.5em 0; }
   @media (min-width: 768px) {
     .site-section {
-      padding: 5em 0; } }
+      padding: 2em 0; } }
   .site-section.site-section-sm {
     padding: 4em 0; }
 
@@ -246,6 +247,7 @@ h1, h2, h3, h4, h5,
     color: #000; }
 
 .site-navbar {
+  font-size: 20px;
   margin-bottom: 0px;
   z-index: 1999;
   position: absolute;
