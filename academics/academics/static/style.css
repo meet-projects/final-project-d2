@@ -236,6 +236,10 @@ h1, h2, h3, h4, h5,
     appearance: none;
     width: 100%; }
 
+.about{
+  font-size: 17px;
+}
+
 /* Navbar */
 .site-logo {
   position: relative;

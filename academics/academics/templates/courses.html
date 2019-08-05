@@ -8,24 +8,24 @@
 
 
   <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
-  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="static/fonts/icomoon/style.css">
 
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/jquery-ui.css">
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="static/bootstrap.min.css">
+  <link rel="stylesheet" href="static/jquery-ui.css">
+  <link rel="stylesheet" href="static/owl.carousel.min.css">
+  <link rel="stylesheet" href="static/owl.theme.default.min.css">
+  <link rel="stylesheet" href="static/owl.theme.default.min.css">
 
-  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="static/jquery.fancybox.min.css">
 
-  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="static/bootstrap-datepicker.css">
 
-  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="static/fonts/flaticon/font/flaticon.css">
 
-  <link rel="stylesheet" href="css/aos.css">
-  <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="static/aos.css">
+  <link href="static/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="static/style.css">
 
 
 
@@ -56,27 +56,33 @@
         </div>
       </div>
     </div>
-    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+<header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
 
       <div class="container">
         <div class="d-flex align-items-center">
           <div class="site-logo">
-            <a href="index.html" class="d-block">
-              <img src="images/logo_sheku.jpg" alt="Image" class="img-fluid" 
-              width="140px" height="105px">
+            <a href="{{url_for('homepage')}}" class="d-block">
+              <img src="static/images/logo_sheku.jpg" alt="Image" class="img-fluid" width="140px" height="105px" >
             </a>
           </div>
           <div class="mr-auto">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li>
-                  <a href="index.html" class="nav-link text-left">Home</a>
+                <li >
+                  <a href="{{url_for('homepage')}}" class="nav-link text-left">Home</a>
+                </li>
+                <li class="has-children">
+                  <ul class="dropdown">
+                  </ul>
+                </li>
+                <li >
+                  <a href="{{url_for('about')}}" class="nav-link text-left">About Us</a>
                 </li>
                 <li class="active">
-                  <a href="courses.html" class="nav-link text-left">Store</a>
+                  <a href="{{url_for('store')}}" class="nav-link text-left">Store</a>
                 </li>
                 <li>
-                    <a href="contact.html" class="nav-link text-left">Contact</a>
+                    <a href="{{url_for('contact')}}" class="nav-link text-left">Contact</a>
                   </li>
               </ul>                                                                                                                                                                                                                                                                                          </ul>
             </nav>
@@ -113,7 +119,7 @@
 
     <div class="custom-breadcrumns border-bottom">
       <div class="container">
-        <a href="index.html">Home</a>
+        <a href="{{url_for('homepage')}}">Home</a>
         <span class="mx-3 icon-keyboard_arrow_right"></span>
         <span class="current">Store</span>
       </div>
@@ -125,12 +131,12 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="course-1-item">
                         <figure class="thumnail">
-                        <a href="course-single.html"><img src="images/course_1.jpg" alt="Image" class="img-fluid"></a>
-                        <div class="price">$99.00</div>
-                        <div class="category"><h3>Mobile Application</h3></div>  
+                        <a href="course-single.html"><img src="static/images/course_1.JPG" alt="Image" height=420px width="350px"></a>
+                        <div class="price">₪15.00</div>
+                          
                         </figure>
                         <div class="course-1-content pb-4">
-                        <h2>How To Create Mobile Apps Using Ionic</h2>
+                        <h2>Flavored Jars</h2>
                         <div class="rating text-center mb-3">
                             <span class="icon-star2 text-warning"></span>
                             <span class="icon-star2 text-warning"></span>
@@ -147,12 +153,11 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="course-1-item">
                         <figure class="thumnail">
-                                <a href="course-single.html"><img src="images/course_2.jpg" alt="Image" class="img-fluid"></a>
-                        <div class="price">$99.00</div>
-                        <div class="category"><h3>Mobile Application</h3></div>  
+                                <a href="course-single.html"><img src="static/images/course_2.jpeg" alt="Image" height=420px></a>
+                        <div class="price">₪15.00</div>
                         </figure>
                         <div class="course-1-content pb-4">
-                        <h2>How To Create Mobile Apps Using Ionic</h2>
+                        <h2>Woven in a Can</h2>
                         <div class="rating text-center mb-3">
                             <span class="icon-star2 text-warning"></span>
                             <span class="icon-star2 text-warning"></span>
@@ -169,12 +174,11 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="course-1-item">
                         <figure class="thumnail">
-                                <a href="course-single.html"><img src="images/course_3.jpg" alt="Image" class="img-fluid"></a>
-                        <div class="price">$99.00</div>
-                        <div class="category"><h3>Mobile Application</h3></div>  
+                                <a href="course-single.html"><img src="static/images/course_3.JPG" alt="Image" height=420px></a>
+                        <div class="price">₪75.00</div>
                         </figure>
                         <div class="course-1-content pb-4">
-                        <h2>How To Create Mobile Apps Using Ionic</h2>
+                        <h2>Table King Closure</h2>
                         <div class="rating text-center mb-3">
                             <span class="icon-star2 text-warning"></span>
                             <span class="icon-star2 text-warning"></span>
@@ -192,12 +196,11 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="course-1-item">
                         <figure class="thumnail">
-                                <a href="course-single.html"><img src="images/course_4.jpg" alt="Image" class="img-fluid"></a>
-                        <div class="price">$99.00</div>
-                        <div class="category"><h3>Mobile Application</h3></div>  
+                                <a href="course-single.html"><img src="static/images/course_4.png" alt="Image" height=420px></a>
+                        <div class="price">₪47.00</div>  
                         </figure>
                         <div class="course-1-content pb-4">
-                        <h2>How To Create Mobile Apps Using Ionic</h2>
+                        <h2>Nanoid Olive Tree</h2>
                         <div class="rating text-center mb-3">
                             <span class="icon-star2 text-warning"></span>
                             <span class="icon-star2 text-warning"></span>
@@ -214,12 +217,11 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="course-1-item">
                         <figure class="thumnail">
-                                <a href="course-single.html"><img src="images/course_5.jpg" alt="Image" class="img-fluid"></a>
-                        <div class="price">$99.00</div>
-                        <div class="category"><h3>Mobile Application</h3></div>  
+                                <a href="course-single.html"><img src="static/images/course_5.JPG" alt="Image" height=420px width="350px"></a>
+                        <div class="price">₪38.00</div>
                         </figure>
                         <div class="course-1-content pb-4">
-                        <h2>How To Create Mobile Apps Using Ionic</h2>
+                        <h2>Cookie Making Kit - Chef Box</h2>
                         <div class="rating text-center mb-3">
                             <span class="icon-star2 text-warning"></span>
                             <span class="icon-star2 text-warning"></span>
@@ -236,12 +238,11 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="course-1-item">
                         <figure class="thumnail">
-                                <a href="course-single.html"><img src="images/course_6.jpg" alt="Image" class="img-fluid"></a>
-                        <div class="price">$99.00</div>
-                        <div class="category"><h3>Mobile Application</h3></div>  
+                                <a href="course-single.html"><img src="static/images/course_6.JPG" alt="Image" height=420px width="350px"></a>
+                        <div class="price">₪15.00</div>                         
                         </figure>
                         <div class="course-1-content pb-4">
-                        <h2>How To Create Mobile Apps Using Ionic</h2>
+                        <h2>Chocolate Papers</h2>
                         <div class="rating text-center mb-3">
                             <span class="icon-star2 text-warning"></span>
                             <span class="icon-star2 text-warning"></span>
@@ -306,27 +307,28 @@
   <!-- .site-wrap -->
 
   <!-- loader -->
-  <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#51be78"/></svg></div>
-
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/jquery.countdown.min.js"></script>
-  <script src="js/bootstrap-datepicker.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.fancybox.min.js"></script>
-  <script src="js/jquery.sticky.js"></script>
-  <script src="js/jquery.mb.YTPlayer.min.js"></script>
 
 
+ <script src="static/js/jquery-3.3.1.min.js"></script>
+  <script src="static/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="static/js/jquery-ui.js"></script>
+  <script src="static/js/popper.min.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+  <script src="static/js/owl.carousel.min.js"></script>
+  <script src="static/js/jquery.stellar.min.js"></script>
+  <script src="static/js/jquery.countdown.min.js"></script>
+  <script src="static/js/bootstrap-datepicker.min.js"></script>
+  <script src="static/js/jquery.easing.1.3.js"></script>
+  <script src="static/js/aos.js"></script>
+  <script src="static/js/jquery.fancybox.min.js"></script>
+  <script src="static/js/jquery.sticky.js"></script>
+  <script src="static/js/jquery.mb.YTPlayer.min.js"></script>
 
 
-  <script src="js/main.js"></script>
+
+
+
+  <script src="static/js/main.js"></script>
 
 </body>
 
