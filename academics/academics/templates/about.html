@@ -64,28 +64,30 @@
       <div class="container">
         <div class="d-flex align-items-center">
           <div class="site-logo">
-            <a href="{{url_for('homepage')}}" class="d-block">
-              <img src="static/images/logo_sheku.jpg" alt="Image" class="img-fluid" width="140px" height="105px" >
+            <a href="index.html" class="d-block">
+              <img src="static/images/logo_sheku.jpg" alt="Image" class="img-fluid" width="140">
             </a>
           </div>
           <div class="mr-auto">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li >
+                <li>
                   <a href="{{url_for('homepage')}}" class="nav-link text-left">Home</a>
                 </li>
                 <li class="has-children">
+                
                   <ul class="dropdown">
+                   
                   </ul>
                 </li>
+                <li>
+                   <a href="about.html" class="nav-link text-left">About Us</a>
+                </li>
+                <li>
+                  <a href="courses.html" class="nav-link text-left">Store</a>
+                </li>
                 <li class="active">
-                  <a href="{{url_for('about')}}" class="nav-link text-left">About Us</a>
-                </li>
-                <li>
-                  <a href="{{url_for('store')}}" class="nav-link text-left">Store</a>
-                </li>
-                <li>
-                    <a href="{{url_for('contact')}}" class="nav-link text-left">Contact</a>
+                    <a href="contact.html" class="nav-link text-left">Contact</a>
                   </li>
               </ul>                                                                                                                                                                                                                                                                                          </ul>
             </nav>
@@ -122,7 +124,7 @@
 
     <div class="custom-breadcrumns border-bottom">
       <div class="container">
-        <a href="{{url_for('homepage')}}">Home</a>
+        <a href="index.html">Home</a>
         <span class="mx-3 icon-keyboard_arrow_right"></span>
         <span class="current">About us</span>
       </div>
@@ -164,7 +166,7 @@ Our supported employment specialists are trying to address these and other commo
     <div class="footer">
       <div class="container">
       
-                <p>
+                <p style="text-align: center;"> 
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -195,8 +197,8 @@ Our supported employment specialists are trying to address these and other commo
   <script src="static/js/jquery.sticky.js"></script>
   <script src="static/js/jquery.mb.YTPlayer.min.js"></script>
 
+  <script src="static/js/main.js"></script>
 
-<script src="static/js/main.js"></script>
 
 </body>
 
