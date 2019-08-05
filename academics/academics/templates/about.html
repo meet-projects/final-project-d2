@@ -64,7 +64,7 @@
       <div class="container">
         <div class="d-flex align-items-center">
           <div class="site-logo">
-            <a href="index.html" class="d-block">
+            <a href="{{url_for('homepage')}}" class="d-block">
               <img src="static/images/logo_sheku.jpg" alt="Image" class="img-fluid" width="140">
             </a>
           </div>
@@ -80,14 +80,14 @@
                    
                   </ul>
                 </li>
-                <li>
-                   <a href="about.html" class="nav-link text-left">About Us</a>
-                </li>
-                <li>
-                  <a href="courses.html" class="nav-link text-left">Store</a>
-                </li>
                 <li class="active">
-                    <a href="contact.html" class="nav-link text-left">Contact</a>
+                   <a href="{{url_for('about')}}" class="nav-link text-left">About Us</a>
+                </li>
+                <li>
+                  <a href="{{url_for('store')}}" class="nav-link text-left">Store</a>
+                </li>
+                <li>
+                    <a href="{{url_for('contact')}}" class="nav-link text-left">Contact</a>
                   </li>
               </ul>                                                                                                                                                                                                                                                                                          </ul>
             </nav>
