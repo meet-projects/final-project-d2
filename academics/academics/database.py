@@ -20,3 +20,5 @@ def query_by_id(product_id):
     product = session.query(Product).filter_by(
         product_id=product_id).first()
     return product
+
+ 

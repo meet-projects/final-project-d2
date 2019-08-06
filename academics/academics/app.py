@@ -52,7 +52,8 @@ def display_product(product_id):
 
 @app.route('/buy')
 def buy():
-	return render_template("buy.html")
+	ls = session.query(Product).all()
+	return render_template("buy.html",ls = ls)
 
 if __name__ == '__main__':
    app.run(debug = True)
