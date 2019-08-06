@@ -14,8 +14,12 @@ app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
 
 
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 def homepage():
+	if request.method =='POST':
+		msg = Message(request.form['name'] + " " + request.form['family'], sender = 'integratedplants@gmail.com', recipients = ['integratedplants@gmail.com'])
+   		msg.html = "<p>" + request.form['prod'] + "</p> <br> <p>" + request.form['quan'] +"</p> <br> <p>" + request.form['email'] + "</p> <br> <p>" + request.form['tel'] + "</p>"
+   		mail.send(msg)
 	ls = session.query(Product).all()
 	return render_template("index.html",ls=ls)
 
@@ -31,7 +35,7 @@ def contact():
    		msg.html = "<p>" + request.form['message'] + "</p> <br> <p>" + request.form['email'] + "</p> <br> <p>" + request.form['tel'] + "</p>"
    		mail.send(msg)
 
-	return render_template("contact.html", check = False)
+	return render_template("contact.html")
 
 @app.route('/aboutus')
 def about():
@@ -46,9 +50,9 @@ def display_product(product_id):
 	product = query_by_id(product_id)
 	return render_template("course-single.html", product = product)
 
-@app.route('/contactbuy')
-def contactbuy():
-	return render_template("contact.html", check= True)
+@app.route('/buy')
+def buy():
+	return render_template("buy.html")
 
 if __name__ == '__main__':
    app.run(debug = True)
