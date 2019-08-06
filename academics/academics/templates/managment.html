@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Integrated Productive Plants &mdash; Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="static/fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="static/bootstrap.min.css">
+  <link rel="stylesheet" href="static/jquery-ui.css">
+  <link rel="stylesheet" href="static/owl.carousel.min.css">
+  <link rel="stylesheet" href="static/owl.theme.default.min.css">
+  <link rel="stylesheet" href="static/owl.theme.default.min.css">
+
+  <link rel="stylesheet" href="static/jquery.fancybox.min.css">
+
+  <link rel="stylesheet" href="static/bootstrap-datepicker.css">
+
+  <link rel="stylesheet" href="static/fonts/flaticon/font/flaticon.css">
+
+  <link rel="stylesheet" href="static/aos.css">
+  <link href="static/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="static/style.css">
 
 	<title></title>
 </head>
@@ -8,9 +32,19 @@
 	<h1>Products</h1>
 	<ol>
 		{%for product in ls%}
-		<li style="font-size: 20px;">Name: {{product.name}}. Picture Path: {{product.picture_path}}. Price: ₪{{product.price}}.00 <a href="{{ url_for('display_product_managment',product_id=product.product_id) }}"> Edit Product</a></li>
+		<li style="font-size: 20px;">Name: {{product.name}}. Picture Path: {{product.picture_path}}. Price: ₪{{product.price}}.00 <a href="{{ url_for('display_product_managment',product_id=product.product_id) }}"> Edit Product </a>
+		<a href="{{ url_for('delete_pro',product_id= product.product_id) }}">delete</a></li>
 		{%endfor%}
 	</ol>
-	<a href="{{url_for('add_product_page')}}">add user</a>
+	<a href="{{url_for('add_product_page')}}" style="font-size: 20px;">add product</a>
+	<br>
+	<h1>Pictures</h1>
+	<ol>
+	{%for picture in pics%}
+		<li style="font-size: 20px;">Picture Path: {{picture.path}} <a href="{{ url_for('delete_pic',picture_id= picture.picture_id) }}"> delete</a></li>
+	{%endfor%}
+
+	<a href="{{url_for('add_picture_page')}}" style="font-size: 20px;">add picture</a>
+	
 </body>
 </html>

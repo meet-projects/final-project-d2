@@ -11,3 +11,8 @@ class Product(Base):
 	picture_path = Column(String)
 	name = Column(String)
 	price = Column(Integer)
+
+class Picture(Base):
+	__tablename__ = 'picture'
+	picture_id = Column(Integer, primary_key=True)
+	path = Column(String)

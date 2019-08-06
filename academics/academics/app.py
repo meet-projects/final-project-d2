@@ -66,8 +66,9 @@ def admin():
 
 @app.route('/managment', methods=['GET','POST'])
 def managment():
+	pics = session.query(Picture).all()
 	ls = session.query(Product).all()
-	return render_template("managment.html", ls=ls)
+	return render_template("managment.html", ls=ls,pics=pics)
 
 
 @app.route('/product_managment/<int:product_id>', methods=['GET','POST'])
@@ -88,6 +89,7 @@ def display_product_managment(product_id):
 
 		session.commit()
 		ls = session.query(Product).all()
+		pics = session.query(Picture).all()
 		return render_template('managment.html',ls = ls)
 	return render_template("managment_product.html", product = product)
 
@@ -97,11 +99,33 @@ def add_product_page():
 		name = request.form['name']
 		picture_path = request.form['path']
 		price = request.form['price']
-		if name != "" and picture_path != "" and price != "" and type(price) is int:
+		if name != "" and picture_path != "" and price != "":
 			add_product(picture_path,name,price)
-			return render_template("managment.html")
+			return redirect(url_for('managment'))
 	return render_template("add_product.html")
+@app.route('/delete/<int:product_id>')
+def delete_pro(product_id):
+	delete_by_id(product_id)
+	ls = session.query(Product).all()
+	pics = session.query(Picture).all()
+	return redirect(url_for('managment'))
 
+
+@app.route('/add_picture',methods=['GET','POST'])
+def add_picture_page():
+	if request.method == 'POST':
+		path = request.form['path']
+		if path != "" :
+			add_pic(path)
+			return redirect(url_for('managment'))
+	return render_template("add_picture.html")
+
+@app.route('/delete_pic/<int:picture_id>')
+def delete_pic(picture_id):
+	delete_pic_by_id(picture_id)
+	ls = session.query(Product).all()
+	pics = session.query(Picture).all()
+	return redirect(url_for('managment'))
 
 if __name__ == '__main__':
    app.run(debug = True)
