@@ -21,4 +21,9 @@ def query_by_id(product_id):
         product_id=product_id).first()
     return product
 
- 
+def delete_by_id(product_id):
+	session.query(Product).filter_by(product_id=product_id).delete()
+	session.commit()
+	
+
+

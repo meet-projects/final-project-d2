@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>manage product</title><meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="{{url_for('static', filename='fonts/icomoon/style.css')}}">
+
+  <link rel="stylesheet" href="{{url_for('static', filename='bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static' ,filename='jquery-ui.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='owl.carousel.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static' ,filename='owl.theme.default.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static' ,filename='owl.theme.default.min.css')}}">
+
+  <link rel="stylesheet" href="{{url_for('static', filename='jquery.fancybox.min.css')}}">
+
+  <link rel="stylesheet" href="{{url_for('static' ,filename='bootstrap-datepicker.css')}}">
+
+  <link rel="stylesheet" href="{{url_for('static', filename='fonts/flaticon/font/flaticon.css')}}">
+
+  <link rel="stylesheet" href="{{url_for('static' ,filename='aos.css')}}">
+  <link href="{{url_for('static', filename='jquery.mb.YTPlayer.min.css')}}" media="all" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+  
+</head>
+<body>
+	
+	
+
+<form method="post" action="/product_managment/{{product.product_id}}">
+    <div class="site-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <label for="fname">Name</label>
+                    <input type="text" id="fname" class="form-control form-control-lg" name="name">
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="lname">Price</label>
+                    <input type="text" id="lname" class="form-control form-control-lg" name="price">
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="lname">Picture Path</label>
+                    <input type="password" id="lname" class="form-control form-control-lg" name="path">
+
+                </div>
+                <div class="col-md-6 form-group">
+                   
+                    
+                </div>
+                <div class="row">
+                <div class="col-12">
+                    <input type="submit" value="Update" class="btn btn-primary btn-lg px-5">
+                </div>
+            </div>
+            </div>
+         </div>
+     </div>
+    </form>
+
+</body>
+</html>

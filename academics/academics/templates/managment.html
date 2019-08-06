@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+</head>
+<body style="text-align: center;">
+	<h1>Products</h1>
+	<ol>
+		{%for product in ls%}
+		<li style="font-size: 20px;">Name: {{product.name}}. Picture Path: {{product.picture_path}}. Price: ₪{{product.price}}.00 <a href="{{ url_for('display_product_managment',product_id=product.product_id) }}"> Edit Product</a></li>
+		{%endfor%}
+	</ol>
+	<a href="{{url_for('add_product_page')}}">add user</a>
+</body>
+</html>
