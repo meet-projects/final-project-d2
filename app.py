@@ -21,7 +21,8 @@ def homepage():
    		msg.html = "<p>" + request.form['prod'] + "</p> <br> <p>" + request.form['quan'] +"</p> <br> <p>" + request.form['email'] + "</p> <br> <p>" + request.form['tel'] + "</p>"
    		mail.send(msg)
 	ls = session.query(Product).all()
-	return render_template("index.html",ls=ls)
+	pics = session.query(Picture).all()
+	return render_template("index.html",ls=ls,pics=pics)
 
 @app.route('/store')
 def store():
@@ -47,7 +48,9 @@ def stories():
 
 @app.route('/product/<int:product_id>')
 def display_product(product_id):
+	print(product_id)
 	product = query_by_id(product_id)
+	print(product)
 	return render_template("course-single.html", product = product)
 
 @app.route('/buy')

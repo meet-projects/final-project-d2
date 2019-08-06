@@ -40,7 +40,7 @@ def delete_pic_by_id(picture_id):
 	session.query(Picture).filter_by(picture_id=picture_id).delete()
 	session.commit()
 
-def query_by_id(picture_id):
+def query_pic_by_id(picture_id):
     picture = session.query(Picture).filter_by(
         picture_id=picture_id).first()
     return picture
